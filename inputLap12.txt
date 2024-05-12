@@ -1,0 +1,6 @@
+5
+NV001 Nguyen Van A 8000 A
+NV002 Tran Thi B 7500 B
+NV003 Le Van C 9000 A
+NV004 Hoang Thi D 7000 C
+NV005 Pham Van E 8500 B

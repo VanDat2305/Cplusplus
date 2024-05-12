@@ -1,3 +1,3 @@
-
-cac phan tu am la: 2
-Gia tri on nhat la: 439
+Number of triplets: 0
+Number of negative elements: 2
+Largest element: 439

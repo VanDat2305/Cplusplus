@@ -1,0 +1,6 @@
+Danh sach nhan vien:
+A 8000 0.00 A
+NV001 Nguyen 0.00 Van
+NV002 Tran 0.00 Thi
+B 7500 0.00 B
+NV003 Le 0.00 Van
