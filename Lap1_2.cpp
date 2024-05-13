@@ -3,7 +3,14 @@
 #include <string.h>
 
 #define MAX_SIZE 100
-
+//Bài 2. Nh?p danh sách n nhân viên c?a I công ty t? t?p input.txt. M?i nhân viên là m?t c?u
+//trúc du?c luu tr? trên 3 dòng c?a t?p g?m các tru?ng : MNV (mã nhân viên), HT (H? tên
+//NV), LUONG (Luong ), PHONG (phòng ban). Gi? s? công ty có 3 phòng A, B, C, Dòng
+//d?u c?a t?p là s? nguyên luu tr? s? lu?ng nhân viên
+//1. T?nh luong trung bình c?a t?ng phòng và cho bi?t phòng nào có luong trung bình th?p
+//nh?t
+//2. In danh sách nhân viên ra mà hình theo th? t? gi?m cân c?a luong
+//3. k?t quái luu vào t?p kq.txt bao g?m c? các thông tin v? n nhân viên.
 typedef struct {
     char MNV[10];
     char HT[50];

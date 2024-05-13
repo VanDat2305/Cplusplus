@@ -1,0 +1,17 @@
+4
+01
+Ten 1
+BAOVE
+4
+02
+Ten 2
+HCTH
+2.3
+03
+Ten 3
+KT
+3.3
+04
+Ten 4
+HCTH
+3.6
