@@ -1,0 +1,13 @@
+
+
+DĚ 3
+Câu 1 (5 điểm). Cho một tệp văn bản (tên tệp nhập từ bàn phim) chứa các phần tử của một ma trận thực. Tệp có dạng sau: Dòng đầu chứa các số nguyên m và n là số hạng và số cột của ma trận. Trên mỗi dòng tiếp theo lần lượt chứa các hàng của ma trận. Hãy viết các hàm: Đọc ma trận từ tập.
+1.Đọc ma trận từ tệp
+2.Tính trung bình cộng các phần tử có giá trị dương mà thuộc các hàng lẻ của ma trận.
+3.Tìm một phần tử có giá trị dương nhỏ nhất của ma trận.
+Viết hàm main() sử dụng các hàm đã xây dựng và hoàn thiện chương trình.
+Câu 2 (5 điểm). Danh sách thí sinh tham gia Olympic sinh viên được lưu trong tệp văn bản input.txt, trong đó dòng đầu là số thi sinh, trên mỗi ba dòng tiếp theo là thông tin của một thí sinh, gồm: Họ tên, Số điểm, Tên trường (Giả sử chỉ có bốn trường tham gia thi là A, B, C, D. Hãy viết các hàm:
+1. Đọc dữ liệu từ tệp trên.
+2.Cho biết các trường nào có tổng số điểm cao nhất.
+3.Tìm các thí sinh đạt điểm cao nhất.
+Viết hàm main() sử dụng các hàm đã xây dựng và hoàn thiện chương trình.

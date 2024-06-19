@@ -1,0 +1,16 @@
+5
+Mai Van Dat
+10
+A
+Do Van Duy
+9
+C
+Nguyen Minh Bach
+6
+B
+Nguyen Quang Duong
+7
+D
+Nguyen Thanh Dat
+8
+C

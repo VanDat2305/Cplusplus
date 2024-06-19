@@ -1,0 +1,124 @@
+
+bai1
+#include <stdio.h>
+
+// Function to read a square matrix from a file
+void docMaTran(FILE *file, int maTran[][100], int *cap) {
+    fscanf(file, "%d", cap);
+    for (int i = 0; i < *cap; i++) {
+        for (int j = 0; j < *cap; j++) {
+            fscanf(file, "%d", &maTran[i][j]);
+        }
+    }
+}
+
+// Function to calculate the average of elements below the secondary diagonal
+double tinhTrungBinhDuoiDuongCheoPhu(int maTran[][100], int cap) {
+    int sum = 0, count = 0;
+    for (int i = 1; i < cap; i++) {
+        for (int j = 0; j < cap - i; j++) {
+            sum += maTran[i][j];
+            count++;
+        }
+    }
+    return (count == 0) ? 0 : (double)sum / count;
+}
+
+// Function to check if a matrix is upper triangular
+int kiemTraMaTranTamGiacTren(int maTran[][100], int cap) {
+    for (int i = 1; i < cap; i++) {
+        for (int j = 0; j < i; j++) {
+            if (maTran[i][j] != 0) {
+                return 0; // false
+            }
+        }
+    }
+    return 1; // true
+}
+
+// Function to find the row with the largest sum
+int hangCoTongLonNhat(int maTran[][100], int cap) {
+    int maxSum = 0, maxRow = 0;
+    for (int i = 0; i < cap; i++) {
+        int sum = 0;
+        for (int j = 0; j < cap; j++) {
+            sum += maTran[i][j];
+        }
+        if (i == 0 || sum > maxSum) {
+            maxSum = sum;
+            maxRow = i;
+        }
+    }
+    return maxRow;
+}
+
+// Function to check if a matrix is symmetric
+int kiemTraDoiXung(int maTran[][100], int cap) {
+    for (int i = 0; i < cap; i++) {
+        for (int j = 0; j < cap; j++) {
+            if (maTran[i][j] != maTran[j][i]) {
+                return 0; // false
+            }
+        }
+    }
+    return 1; // true
+}
+
+// Function to print the matrix
+void inMaTran(int maTran[][100], int cap) {
+    for (int i = 0; i < cap; i++) {
+        for (int j = 0; j < cap; j++) {
+            printf("%d ", maTran[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    FILE *file;
+    char fileName[100];
+    int maTran[100][100], cap;
+
+    // Prompt user for file name
+    printf("Nhap ten tep: ");
+    scanf("%s", fileName);
+
+    // Open input file
+    file = fopen(fileName, "r");
+    if (file == NULL) {
+        printf("Loi khi mo tep dau vao.\n");
+        return 1;
+    }
+
+    // Read the matrix from the file
+    docMaTran(file, maTran, &cap);
+    fclose(file);
+
+    // Print the matrix
+    printf("Ma tran A:\n");
+    inMaTran(maTran, cap);
+
+    // Calculate and print the average below the secondary diagonal
+    double avgBelowSecondaryDiagonal = tinhTrungBinhDuoiDuongCheoPhu(maTran, cap);
+    printf("Trung binh cong cac phan tu nam phia duoi duong cheo phu: %.2f\n", avgBelowSecondaryDiagonal);
+
+    // Check if the matrix is upper triangular
+    if (kiemTraMaTranTamGiacTren(maTran, cap)) {
+        printf("Ma tran la ma tran tam giac tren.\n");
+    } else {
+        printf("Ma tran khong phai la ma tran tam giac tren.\n");
+    }
+
+    // Find and print the row with the largest sum
+    int maxRow = hangCoTongLonNhat(maTran, cap);
+    printf("Hang co tong lon nhat la hang %d\n", maxRow + 1); // Adding 1 to match typical row numbering
+
+    // Check if the matrix is symmetric
+    if (kiemTraDoiXung(maTran, cap)) {
+        printf("Ma tran doi xung.\n");
+    } else {
+        printf("Ma tran khong doi xung.\n");
+    }
+
+    return 0;
+}

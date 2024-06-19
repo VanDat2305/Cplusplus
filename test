@@ -1,0 +1,88 @@
+#include <stdio.h>
+
+typedef struct {
+    char hoTen[100];
+    char queQuan[100];
+    char hocLuc;
+} SinhVien;
+
+//y1
+int docDSSV(FILE *file, SinhVien dsSV[]) {
+    int soSV;
+    fscanf(file, "%d", &soSV);
+    for (int i = 0; i < soSV; i++) {
+        fscanf(file, " %[^\n]%*c", dsSV[i].hoTen);
+        fscanf(file, " %[^\n]%*c", dsSV[i].queQuan);
+        fscanf(file, " %c%*c", &dsSV[i].hocLuc);
+    }
+    return soSV;
+}
+
+//y2
+void xuatDSSV(SinhVien dsSV[], int soSV) {
+    for (int i = 0; i < soSV; i++) {
+        printf("Sinh Vien %d:\n", i + 1);
+        printf("  Ho ten: %s\n", dsSV[i].hoTen);
+        printf("  Que quan: %s\n", dsSV[i].queQuan);
+        printf("  Hoc luc: %c\n", dsSV[i].hocLuc);
+    }
+}
+//y3
+void timSVTheoTen(SinhVien dsSV[], int soSV, const char *ten) {
+    int found = 0;
+    for (int i = 0; i < soSV; i++) {
+        if (strcmp(dsSV[i].hoTen, ten) == 0) {
+            printf("Thong tin sinh vien:\n");
+            printf("  Ho ten: %s\n", dsSV[i].hoTen);
+            printf("  Que quan: %s\n", dsSV[i].queQuan);
+            printf("  Hoc luc: %c\n", dsSV[i].hocLuc);
+            found = 1;
+            break;
+        }
+    }
+    if (!found) {
+        printf("Khong tim thay sinh vien voi ten: %s\n", ten);
+    }
+}
+//y4
+int demSVHLA(SinhVien dsSV[], int soSV) {
+    int count = 0;
+    for (int i = 0; i < soSV; i++) {
+        if (dsSV[i].hocLuc == 'A') {
+            count++;
+        }
+    }
+    return count;
+}
+
+
+int main() {
+    FILE *file;
+    char fileName[100];
+    SinhVien dsSV[100];
+    int soSV;
+    
+    printf("Nhap ten tep: ");
+    scanf("%s", fileName);
+
+    file = fopen(fileName, "r");
+    if (file == NULL) {
+        printf("Loi khi mo tep dau vao.\n");
+        return 1;
+    }
+
+    soSV = docDSSV(file, dsSV);
+    fclose(file);
+    
+    printf("Danh sach sinh vien:\n");
+    xuatDSSV(dsSV, soSV);
+    
+    char ten[100];
+    printf("Nhap ten sinh vien can tim: ");
+    scanf(" %[^\n]%*c", ten);
+    timSVTheoTen(dsSV, soSV, ten);
+
+    int countA = demSVHLA(dsSV, soSV);
+    printf("So sinh vien dat hoc luc A: %d\n", countA);
+    
+}

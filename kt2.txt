@@ -1,0 +1,120 @@
+#include <stdio.h>
+
+// Define a structure for storing student information
+typedef struct {
+    char hoTen[100];
+    char queQuan[100];
+    char hocLuc;
+} SinhVien;
+
+// Function to read the list of students from a file
+int docDanhSachSinhVien(FILE *file, SinhVien dsSinhVien[]) {
+    int soSV;
+    fscanf(file, "%d", &soSV);
+    for (int i = 0; i < soSV; i++) {
+        fscanf(file, " %[^\n]%*c", dsSinhVien[i].hoTen);
+        fscanf(file, " %[^\n]%*c", dsSinhVien[i].queQuan);
+        fscanf(file, " %c%*c", &dsSinhVien[i].hocLuc);
+    }
+    return soSV;
+}
+
+// Function to print the information of all students
+void xuatDanhSachSinhVien(SinhVien dsSinhVien[], int soSV) {
+    for (int i = 0; i < soSV; i++) {
+        printf("Sinh Vien %d:\n", i + 1);
+        printf("  Ho ten: %s\n", dsSinhVien[i].hoTen);
+        printf("  Que quan: %s\n", dsSinhVien[i].queQuan);
+        printf("  Hoc luc: %c\n", dsSinhVien[i].hocLuc);
+    }
+}
+
+// Function to find a student by name and print their information
+void timSinhVienTheoTen(SinhVien dsSinhVien[], int soSV, const char *ten) {
+    int found = 0;
+    for (int i = 0; i < soSV; i++) {
+        if (strcmp(dsSinhVien[i].hoTen, ten) == 0) {
+            printf("Thong tin sinh vien:\n");
+            printf("  Ho ten: %s\n", dsSinhVien[i].hoTen);
+            printf("  Que quan: %s\n", dsSinhVien[i].queQuan);
+            printf("  Hoc luc: %c\n", dsSinhVien[i].hocLuc);
+            found = 1;
+            break;
+        }
+    }
+    if (!found) {
+        printf("Khong tim thay sinh vien voi ten: %s\n", ten);
+    }
+}
+
+// Function to count the number of students with grade 'A'
+int demSinhVienHocLucA(SinhVien dsSinhVien[], int soSV) {
+    int count = 0;
+    for (int i = 0; i < soSV; i++) {
+        if (dsSinhVien[i].hocLuc == 'A') {
+            count++;
+        }
+    }
+    return count;
+}
+
+// Function to print students with a specific grade
+void inSinhVienTheoHocLuc(SinhVien dsSinhVien[], int soSV, char hocLuc) {
+    int found = 0;
+    for (int i = 0; i < soSV; i++) {
+        if (dsSinhVien[i].hocLuc == hocLuc) {
+            printf("Thong tin sinh vien:\n");
+            printf("  Ho ten: %s\n", dsSinhVien[i].hoTen);
+            printf("  Que quan: %s\n", dsSinhVien[i].queQuan);
+            printf("  Hoc luc: %c\n", dsSinhVien[i].hocLuc);
+            found = 1;
+        }
+    }
+    if (!found) {
+        printf("Khong tim thay sinh vien voi hoc luc: %c\n", hocLuc);
+    }
+}
+
+int main() {
+    FILE *file;
+    char fileName[100];
+    SinhVien dsSinhVien[100];
+    int soSV;
+
+    // Prompt user for file name
+    printf("Nhap ten tep: ");
+    scanf("%s", fileName);
+
+    // Open input file
+    file = fopen(fileName, "r");
+    if (file == NULL) {
+        printf("Loi khi mo tep dau vao.\n");
+        return 1;
+    }
+
+    // Read the list of students from the file
+    soSV = docDanhSachSinhVien(file, dsSinhVien);
+    fclose(file);
+
+    // Print the list of students
+    printf("Danh sach sinh vien:\n");
+    xuatDanhSachSinhVien(dsSinhVien, soSV);
+
+    // Find and print a student by name
+    char ten[100];
+    printf("Nhap ten sinh vien can tim: ");
+    scanf(" %[^\n]%*c", ten);
+    timSinhVienTheoTen(dsSinhVien, soSV, ten);
+
+    // Count and print the number of students with grade 'A'
+    int countA = demSinhVienHocLucA(dsSinhVien, soSV);
+    printf("So sinh vien dat hoc luc A: %d\n", countA);
+
+    // Print students with a specific grade
+    char hocLuc;
+    printf("Nhap hoc luc can tim: ");
+    scanf(" %c", &hocLuc);
+    inSinhVienTheoHocLuc(dsSinhVien, soSV, hocLuc);
+
+    return 0;
+}

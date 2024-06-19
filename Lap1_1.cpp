@@ -66,7 +66,7 @@ int main() {
 
 
 //    // Doc va in day so A
-//    doDaiA = docDaySo(file, daySoA);
+    doDaiA = docDaySo(file, daySoA);
 //    printf("Day so A: ");
 //    inDaySo(daySoA, doDaiA);
 //
