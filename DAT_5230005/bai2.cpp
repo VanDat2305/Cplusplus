@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 typedef struct {
     char hoTen[100];
@@ -28,14 +29,17 @@ void xuatDanhSachSinhVien(SinhVien dsSinhVien[], int soSV) {
     }
 }
 //y3
-void timSinhVienTheoTen(SinhVien dsSinhVien[], int soSV, const char *ten) {
+void timSinhVienTheoTen(SinhVien dsSinhVien[], int soSV,const char *ten) {
     int found = 0;
     for (int i = 0; i < soSV; i++) {
-	        SinhVien temp = dsSinhVien[i];
-	        if(dsSinhVien[i].hoTen == ten){
-	         printf("\nThong tin Sinh vien:\n");
-	            printf("%-10s %-30s %-10s\n", dsSinhVien[i].hoTen, dsSinhVien[i].queQuan, dsSinhVien[i].hocLuc);
-	   }
+        // testStrcmp(temp.hoTen, ten);
+         if (strcmp(dsSinhVien[i].hoTen, ten) == 0) {
+            found = 1;
+            printf("\nThong tin Sinh vien:\n");
+            printf("%-30s %-30s %-10s\n", "Ho Ten", "Que Quan", "Hoc Luc");
+            printf("%-30s %-30s %-10s\n", dsSinhVien[i].hoTen, dsSinhVien[i].queQuan, dsSinhVien[i].hocLuc);
+            break;
+        }
     }
     if (!found) {
         printf("Khong tim thay sinh vien voi ten: %s\n", ten);

@@ -1,0 +1,3 @@
+Ho ten                         Diem       Ten truong          
+MaiVanDat                      10         A                   
+VanDat2                        9          D                   
