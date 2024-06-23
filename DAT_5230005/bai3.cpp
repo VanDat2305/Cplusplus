@@ -8,16 +8,16 @@ typedef struct {
 } SinhVien;
 
 
-//Câu 2 (5 di?m). Danh sách thí sinh tham gia Olympic sinh viên du?c luu trong t?p van b?n input.txt,
-// trong dó dòng d?u là s? thi sinh, trên m?i ba dòng ti?p theo là thông tin c?a m?t thí sinh, g?m: H? tên, S? di?m, Tên tru?ng
-//(Gi? s? ch? có b?n tru?ng tham gia thi là A, B, C, D). Hãy vi?t các hàm:
-//1. Ð?c d? li?u t? t?p trên.
-//2.Cho bi?t các tru?ng nào có t?ng s? di?m cao nh?t.
-//3.Tìm các thí sinh d?t di?m cao nh?t.
-//Vi?t hàm main() s? d?ng các hàm dã xây d?ng và hoàn thi?n chuong trình.
+//Cï¿½u 2 (5 di?m). Danh sï¿½ch thï¿½ sinh tham gia Olympic sinh viï¿½n du?c luu trong t?p van b?n input.txt,
+// trong dï¿½ dï¿½ng d?u lï¿½ s? thi sinh, trï¿½n m?i ba dï¿½ng ti?p theo lï¿½ thï¿½ng tin c?a m?t thï¿½ sinh, g?m: H? tï¿½n, S? di?m, Tï¿½n tru?ng
+//(Gi? s? ch? cï¿½ b?n tru?ng tham gia thi lï¿½ A, B, C, D). Hï¿½y vi?t cï¿½c hï¿½m:
+//1. ï¿½?c d? li?u t? t?p trï¿½n.
+//2.Cho bi?t cï¿½c tru?ng nï¿½o cï¿½ t?ng s? di?m cao nh?t.
+//3.Tï¿½m cï¿½c thï¿½ sinh d?t di?m cao nh?t.
+//Vi?t hï¿½m main() s? d?ng cï¿½c hï¿½m dï¿½ xï¿½y d?ng vï¿½ hoï¿½n thi?n chuong trï¿½nh.
 
 
-// Danh sách thi sinh tham gia Olymic sinh vien duoc luu trong tep van ban input.txt
+// Danh sach thi sinh tham gia Olymic sinh vien duoc luu trong tep van ban input.txt
 // trong do dong dau la so thi sinh tren moi ba dong tiep theo la thong tin cua mot thi sinh gom ho te so diem ten truong
 // gia su chi co 4 truong tham gia thi la A B C D. Hay viet cac ham 
 // 1 doc du lieu tu tep tren 
@@ -42,7 +42,6 @@ int readDataFormFile(const char *fileName, SinhVien danhSach[], int *countDataFi
 //	    
 //	    printf("%-30s %-10d %-20s\n", danhSach[i].hoTen, danhSach[i].diem, danhSach[i].tenTruong);
 //    }
-
 //  1 dong la thong itn cua 1 thu sinh gom 3 thong tin
     for (int i = 0; i < *countDataFile; i++) {
         if (fscanf(file, "%s %d %s", danhSach[i].hoTen, &danhSach[i].diem, danhSach[i].tenTruong) != 3) {
@@ -51,22 +50,23 @@ int readDataFormFile(const char *fileName, SinhVien danhSach[], int *countDataFi
             return 0;
         }
     }
-//    printf("%-30s %-10s %-20s\n", "Ho ten", "Diem", "Ten truong");
-//    for (int i = 0; i < *countDataFile; i++) {
-//        printf("%-30s %-10d %-20s\n", danhSach[i].hoTen, danhSach[i].diem, danhSach[i].tenTruong);
-//    }
-
-	
 	fclose(file);
     return 1;
-	
 }
 
-// 2 Cho vie truong nao có tong so diem cao nhat
+// 2 Cho biet truong nao co tong so diem cao nhat
+void schoolTopScore(SinhVien danhSach[], int countDataFile){
+    float diemCaoNhat = 0;
+    char truongDiemCaoNhat[5][50];
+    int soTruongDiemCaoNhat = 0;
+
+
+}
+
 // 3 tim cac thi sinh dat diem cao nhat
 
 // 4 viet ham xuat thong tin thi sinh 
-// Hàm xu?t d? li?u sinh viên ra file output
+// Ham xuat du lieu sinh vien ra file output
 int writeDataToFile(const char *fileName, SinhVien danhSach[], int countDataFile) {
     FILE *file = fopen(fileName, "w");
     if (file == NULL) {
@@ -74,10 +74,10 @@ int writeDataToFile(const char *fileName, SinhVien danhSach[], int countDataFile
         return 0;
     }
 
-    // Xu?t tiêu d? các c?t
+    // Xuat tieu de cac cot
     fprintf(file, "%-30s %-10s %-20s\n", "Ho ten", "Diem", "Ten truong");
 
-    // Xu?t thông tin c?a t?ng sinh viên
+    // Xuat thong tin cua tung sinh vien
     for (int i = 0; i < countDataFile; i++) {
         fprintf(file, "%-30s %-10d %-20s\n", danhSach[i].hoTen, danhSach[i].diem, danhSach[i].tenTruong);
     }
@@ -89,7 +89,7 @@ int writeDataToFile(const char *fileName, SinhVien danhSach[], int countDataFile
 // viet ham main() su dung cac ham da xay dung va hoan thien chuong trinh
 
 int main() {
-//	FILE *file; // khai bao mot con tro có ten la file
+//	FILE *file; // khai bao mot con tro co ten la file
 	const char* fileName = "inputbai3.txt";
 	int countDataFile  = 0;
 	// khai bao cau truc du lieu

@@ -1,0 +1,18 @@
+
+
+Câu 1 (5 điểm). Cho một tệp văn bản (tên tệp nhập tin bản phim) chim toạ độ của một dãy điểm trên mặt phẳng, có dạng:
+ dòng đầu chứa số điểm, trên mỗi dòng tiếp theo chim hoành độ và tung độ của một điểm. Hãy viết hàm thực hiện các yêu cầu sau:
+1.Đọc dữ liệu của dãy điểm từ tập trên.
+2.Xác định một điểm ở xa gốc tọa độ nhất.
+3. Nếu có mỗi hai điểm nối với nhau tạo thành một đoạn thẳng, xác định số đoạn thẳng tạo bởi tập điểm n trên và nằm bên trong góc phân tre thứ ba.
+4.Tìm đoạn thẳng dài nhất
+5.Đếm số điểm thuộc đường phân giác góc phần tư thứ nhất
+Viết hàm main() sử dụng các hàm đã xây dựng và hoàn thiện chương trình.
+
+Câu 2 (5 điểm). Mỗi nhân viên là một cấu trúc gồm: Họ tên, Lương và Mã công việc (Giả sử chỉ có 3 mà công việc là 1, 2, 3). Hãy viết hiện thực hiện các yêu cầu sau:
+1.Nhập từ bàn phím một danh sách n nhân viên có cấu trúc như trên.
+2. Tinh trung binh lương nhân viên theo mã công việc.
+3. Xuất danh sách nhân viên trên ra tập văn bản theo dạng: dòng đầu là số nhân viên, trên mỗi ba dòng tiếp theo là các thông tin của một nhân viên (Họ tên, Long. Mã công việc).
+4. Tính tổng tiền lương của nhân viên có mà công việc là 2
+5. Công việc nào có nhiều nhân viên tham gia nhất
+Viết hàm main() sử dụng các hàm đã viết ở trên và hoàn thiện chương trình.

@@ -1,0 +1,20 @@
+
+
+Câu 1. (4 điểm) Cho một tệp văn bản (tên tệp nhập từ bàn phím) chứa các phần tử của một ma trận thực cấp mới m*n.
+ Tệp có cấu trúc như sau:
+  Dòng đầu chứa các số nguyên m và n (giữa hai số m và n có ít nhất một dấu cách). Dòng thứ i+1 (i-1, 2,..., m) 
+  chứa các phân tử của hàng thứ i của mua trận (giữa các phần tử có ít nhất một dấu cách). Hãy:
+1. Viết hàm đọc ma trận tốc tập và tính TBC các phần tử có giá trị âm của ra trận.
+2. Tìm một phẩm từ có giá trị âm lớn nhất của ma trận.
+3. Tính tổng các phân tử thuộc cột lẻ
+
+Câu 2. (6 điểm) Danh sách n thí sinh tham gia Olympic Tin học sinh viên từ tệp văn bản input.txt,
+trong đó dòng đầu là số thí sinh, trên mỗi
+ba dòng tiếp theo là thông tin của 1 thí sinh.
+Mỗi thí sinh là một cấu trúc gồm các trường được lưu trữ trên ba dòng: HT (Họ tên), DIEM (Số điểm), TRUONG (Trưởng). 
+Giả thiết chỉ có bốn trường Đại học tham gia là A, B, C, D. Yêu cầu:
+1. Viết hàm đọc dữ liệu từ tập trên. Tính tổng số điểm của mỗi trường đại học trên. 
+Hãy cho biết các trường có tổng số điểm cao nhất.
+2. Cho biết điểm cao nhất mà các thí sinh đạt được và danh sách các thí sinh đạt điểm cao nhất,
+3. Nhập vào một điểm chuẩn, in ra thông tin những sinh viên qua môn
+Các kết quả lưu vào tập output bt.

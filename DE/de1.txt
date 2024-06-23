@@ -1,0 +1,16 @@
+
+Bài 1. Cho tệp văn bản input.txt chứa thông tin về hai dãy al, a2, .... an và blm b2. .... bn. 
+Tệp có cấu trúc như sau: Dòng đầu chứa các số nguyên n, m là số phân tử của dãy a và dãy b. 
+dòng thứ hai chứa n số của dãy a, dòng thứ ba chứa m số của dãy b. Hãy viết chương trình có xây dựng các hàm để thực hiện:
+1. Đọc từ tập hai dãy số nguyên, có cấp phát động bộ nhớ, in các dãy số ra màn hình. 2.
+ Tính giá trị lớn nhất của dãy a và giá trị lớn nhất của dãy b.
+3. Sắp xếp dãy a và dãy b đều theo thứ tự giảm dần, sau đó đưa các dãy số dã được sắp xếp
+ra màn hình.
+Bài 2. Nhập danh sách n nhân viên của 1 công ty từ tệp input.txt.
+ Mỗi nhân viên là một cấu trúc được lưu trữ trên 3 dòng của tệp gồm các trường : 
+ MNV (mã nhân viên), HT (Họ tên NV), LUONG (Lương ), PHONG (phòng ban). Giả sử công ty có 3 phòng A, B, C, 
+ Dòng dầu của tệp là số nguyên lưu trữ số lượng nhân viên
+1. Tính lương trung bình của từng phòng và cho biết phòng nào có lương trung bình thấp
+nhất
+2. In danh sách nhân viên ra mà hình theo thứ tự giảm cân của lương
+3. kết quái lưu vào tệp kq.txt bao gồm cả các thông tin về n nhân viên.
