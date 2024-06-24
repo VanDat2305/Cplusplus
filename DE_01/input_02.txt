@@ -1,0 +1,13 @@
+3
+NV001
+Mai Van Dat
+9000.0
+Cong nghe 1
+NV002
+Nguyen Van A
+19000.0
+Kinh Doanh 1
+NV003
+Tran Thi B
+15000.0
+Cong nghe 2

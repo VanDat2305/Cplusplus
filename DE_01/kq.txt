@@ -1,0 +1,9 @@
+Phong ban co luong trung binh thap nhat : A 
+Ma nhan vien    Ho ten               Luong      Phong ban  
+NV007           NguyenVanA1          103000     C          
+NV006           TranThiB4            99000      B          
+NV004           TranThiB2            79000      B          
+NV005           TranThiB3            69000      B          
+NV003           TranThiB             39000      B          
+NV001           MaiVanDat            30000      A          
+NV002           NguyenVanA           19000      A          

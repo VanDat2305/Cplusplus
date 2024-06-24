@@ -36,9 +36,9 @@ int readDataFormFile(const char *fileName, SinhVien danhSach[], int *countDataFi
 
 //  3 dong tiep theo la thong tin cua 1 thi sinh
 //	for (int i = 0; i < *countDataFile; i++) {
-//	    fscanf(file, "%s", danhSach[i].hoTen);
+//	    fscanf(file, %[^\n]%*c, danhSach[i].hoTen);
 //	    fscanf(file, "%d", &danhSach[i].diem);
-//	    fscanf(file, "%s", danhSach[i].tenTruong);
+//	    fscanf(file, %[^\n]%*c, danhSach[i].tenTruong);
 //	    
 //	    printf("%-30s %-10d %-20s\n", danhSach[i].hoTen, danhSach[i].diem, danhSach[i].tenTruong);
 //    }

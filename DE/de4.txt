@@ -1,6 +1,6 @@
 
 
-Câu 1 (5 điểm). Cho một tệp văn bản (tên tệp nhập tin bản phim) chim toạ độ của một dãy điểm trên mặt phẳng, có dạng:
+Câu 1 (5 điểm). Cho một tệp văn bản (tên tệp nhập tin bản phim) tìm toạ độ của một dãy điểm trên mặt phẳng, có dạng:
  dòng đầu chứa số điểm, trên mỗi dòng tiếp theo chim hoành độ và tung độ của một điểm. Hãy viết hàm thực hiện các yêu cầu sau:
 1.Đọc dữ liệu của dãy điểm từ tập trên.
 2.Xác định một điểm ở xa gốc tọa độ nhất.
